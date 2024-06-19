@@ -26,7 +26,7 @@ def registrar():
                        input("Ingrese su dirección: "),
                        input("Ingrese su correo: ")])
    print("Has sido registrado con exito")
-   
+   return(" ")
 
 while primer==True:
     print(menu1())
@@ -36,13 +36,13 @@ while primer==True:
          print("Por favor, ingrese una opción correcta")
          primer = True
         else:
-         primer = False
+         primer = True #controlar con while
     except ValueError:
      print("Por favor, ingrese un numero entero")  
     while opt1 == True:
             if opt==1:
              print(registrar())
-             opt = False
+             opt1 = False
             elif opt==2:
              if len(usuarios) == 0:
                 print("No se encuentra ningun usuario registrado")
