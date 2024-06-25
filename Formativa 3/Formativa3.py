@@ -26,21 +26,25 @@ def registrar(trabajadores):
       desc_salud = sueldo_bruto * 0.07
       desc_afp =  sueldo_bruto * 0.12
       liquido = sueldo_bruto - (desc_salud-desc_afp)
+      
+      trabajadores.append(["Nombre:",nombre,"Cargo:",cargo,"Sueldo Bruto:",sueldo_bruto,
+                           "Dcto. Salud",desc_salud,"Dcto. AFP:",desc_afp,"Sueldo Liquido",liquido])
 
-      trabajadores.append([
-       "Nombre:",nombre,
-       "Cargo:",cargo,
-       "Sueldo Bruto:",sueldo_bruto,
-       "Des. salud:",desc_salud,
-       "Des. AFP:",desc_afp,
-       "Sueldo Liquido:",liquido,
-        ])
       return("Has sido registrado con exito")
 
 def listar_trabajadores(trabajadores):                   
-    for a in trabajadores:
-     print(a)
-
+    for row in trabajadores:
+       for elementos in row:
+          print(elementos, end="  ")
+    print("")  
+     
+def imprimir(trabajadores):
+   seleccionar = input("Ingrese cargo para imprimir planilla: ").title()
+   #if seleccionar in cargos:
+      #with open("Listado por cargo.txt",'w') as archivo:
+         
+          
+      
 
 while rojo == True:
   try:  
@@ -67,14 +71,14 @@ while rojo == True:
             break
       azul = True   
     elif opcion == 3:
-      ""
+      imprimir(trabajadores)
     elif opcion == 4:
       print("Ha salido del programa satisfactoriamente")
       break
     else:
-      print("Ingrese una opciòn valida\n")
+      print("\nIngrese una opciòn valida\n")
       rojo = True
   except ValueError:
-     print("Seleccione la opción valida\n")     
+     print("\nSeleccione la opción valida\n")     
      rojo = True      
 
